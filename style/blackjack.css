@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+}
+
+
+.table{
+    height: 100vh;
+    width: 100%;
+    /* background-image: url(https://dribbble.com/shots/1793238-Blackjack?utm_source=Clipboard_Shot&utm_campaign=cdecaro&utm_content=Blackjack&utm_medium=Social_Share); */
+    background-size: cover;
+    background-color: #06052c;
+}
+
+.dealer{
+    font-family: Smythe;
+    color: #B38E67;
+    font-size: 100px;
+    font-style: oblique;
+    text-align: center;
+    width: 100%;
+    text-shadow: 3px 3px 6px #4A3B44;
+}
+
+.dealerDeck {
+    border-color: #B38E67;
+    border-style: double;
+    height: 400px;
+    width: 75%;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.playerDeck{
+    border-color: #B38E67;
+    border-style: double;
+    height: 400px;
+    width: 75%;
+    border-radius: 12px;
+    margin: auto;
+}
+
+.buttonStyle{
+    height: 100px;
+    width: 25%;
+    background-color: #94765E;
+    color: #3B3141;
+    font-family: Smythe;
+    font-style: oblique;
+    font-size: 75px;
+    text-shadow: 3px 3px 6px #4A3B44;
+    margin-top: 10px;
+    border-radius: 12px;
+}
+
+.center{
+    margin: auto;
+    text-align: center;
+}
+
+.image{
+    height: 300px;
+    margin: 50px;
+    border-radius: 12px;
+}
