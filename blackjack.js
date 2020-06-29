@@ -6,17 +6,17 @@ function dealDeck(){
     var player_Deck = document.getElementById("#player-deck");
     var dealer_Deck = document.getElementsById("#dealer-deck");
 
-    if (dealButton.addEventListener("click", (event) => {
+    dealButton.addEventListener("click", (event) => {
         console.log("hello");
-        // dealer_Deck.textContent = <img src="images/JPEG/2C.jpg" alt=""></img>;
-        // dealer_Deck.textContent = <img src="images/JPEG/2S.jpg" alt=""></img>;
-        // player_Deck.textContent = <img src="images/JPEG/JS.jpg" alt=""></img>;
-        // player_Deck.textContent = <img src="images/JPEG/KH.jpg" alt=""></img>;
-    // else
-        // dealer_Deck.textContent = '';
-        // player_Deck.textContent = '';
+        dealer_Deck.innerHTML = <img src="images/JPEG/2C.jpg" alt=""></img>;
+        dealer_Deck.innerHTML = <img src="images/JPEG/2S.jpg" alt=""></img>;
+        player_Deck.innerHTML = <img src="images/JPEG/JS.jpg" alt=""></img>;
+        player_Deck.innerHTML = <img src="images/JPEG/KH.jpg" alt=""></img>;
+    else
+        dealer_Deck.innerHTML = '';
+        player_Deck.innerHTML = '';
         // console.log("bye");
-    }))
+    })
 }
 
 
