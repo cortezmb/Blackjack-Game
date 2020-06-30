@@ -8,6 +8,8 @@ var dealerHand = [];
 var dealButton = document.getElementById("deal-button");
 var player_Deck = document.getElementById("player-deck");
 var dealer_Deck = document.getElementById("dealer-deck");
+var hitButton = document.getElementById("hit-button");
+var playerPoints = document.getElementById("player-points");
 
 //Build the deck of cards
 function buildDeck(){
@@ -23,14 +25,10 @@ function buildDeck(){
             if(values[a] == 'A'){
                 card.Value = 11;
             }
-
             deck.push(card);
         }
     }
 }
-
-
-
 
 //Shuffle the deck of cards
 function shuffle(deck) {
@@ -43,18 +41,20 @@ function shuffle(deck) {
     return deck;
 }
 
-
-
-
 //Get 2 cards from deck for Dealer
 function dealerCards(){
     dealerHand.push(deck.pop());
     dealerHand.push(deck.pop());
     var imageCard = "";
     for(var i = 0; i < dealerHand.length; i++){
-        imageCard += `<img src="${dealerHand[i].ImgFile}" width = "200px"></img>`;
+        imageCard += `<img src="${dealerHand[i].ImgFile}" class="image"></img>`;
     }
     return imageCard
+}
+
+//Put 2 cards for Dealer in Dealer's Box
+function displayDealerCards(){
+    dealer_Deck.innerHTML = dealerCards();
 }
 
 //Get 2 cards from deck for Player
@@ -63,14 +63,9 @@ function playerCards(){
     playerHand.push(deck.pop());
     var imageCard = "";
     for(var i = 0; i < playerHand.length; i++){
-        imageCard += `<img src="${playerHand[i].ImgFile}" width = "200px"></img>`;
+        imageCard += `<img src="${playerHand[i].ImgFile}" class="image"></img>`;
     }
     return imageCard;
-}
-
-//Put 2 cards for Dealer in Dealer's Box
-function displayDealerCards(){
-    dealer_Deck.innerHTML = dealerCards();
 }
 
 //Put 2 cards for Player in Player's Box
@@ -79,28 +74,50 @@ function displayPlayerCards(){
 }
 
 //Deal the deck
-
 dealButton.addEventListener("click", (event) => {
     buildDeck();
-    //step 2 
-
     deck = shuffle(deck)
-    // shuffle();
-    // dealerCards();
     displayDealerCards();
-    // playerCards();
     displayPlayerCards();
 })      
 
+// Deal a Hit for Player
+hitButton.addEventListener("click", (e) => {
+    displayHitCard();
+})
+
+//Get 1 card from deck for Player when hit button is pressed
+function playerHit(){
+    playerHand.push(deck.pop());
+    var imagePlayerHit = "";
+    for(var i = 0; i < playerHand.length; i++){
+        imagePlayerHit += `<img src="${playerHand[i].ImgFile}" class="image"></img>`;
+    }
+return imagePlayerHit;
+}
+
+//Put 1 hit card for Player in Player's Box
+function displayHitCard(){
+    player_Deck.innerHTML = playerHit();
+}
+
+//Check to see if player has 21 or greater
+function check(){
+    if(playerHand.Value > 21){
+        
+    }
+}
 
 
 
-// function hitMe(){
 
-//     hitButton = addEventListener("click", (event) => {
-//         player_Deck.innerHTML = buildDeck();
-//     })
-// }
+
+
+
+
+
+
+
 
 
 
